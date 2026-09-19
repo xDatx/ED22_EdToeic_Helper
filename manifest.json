@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "ED22 & EDToeic Helper",
+  "version": "1.2",
+  "description": "Tự động hiển thị và tùy biến giao diện đáp án ED Learning Area",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://applicationservices.toeicsbc.com/*",
+    "https://*.engdis.com/*",
+    "https://ets.toeicolpc.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ed22.engdis.com/Runtime/learningArea.html*",
+        "https://edtoeic.engdis.com/Runtime/learningArea.html*",
+        "https://ets.toeicolpc.com/Runtime/Test.aspx*",
+        "https://applicationservices.toeicsbc.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://ed22.engdis.com/Runtime/learningArea.html*",
+        "https://edtoeic.engdis.com/Runtime/learningArea.html*",
+        "https://ets.toeicolpc.com/Runtime/Test.aspx*",
+        "https://applicationservices.toeicsbc.com/*"
+      ],
+      "js": ["content-isolated.js"],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "all_frames": true
+
+    }
+  ]
+}
