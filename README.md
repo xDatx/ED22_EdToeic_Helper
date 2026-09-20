@@ -43,5 +43,5 @@ A Manifest V3 Chrome Extension that intercepts network requests (XHR/Fetch) to e
 ```
 
 ## Disclaimer
-
+Working (Course 1, 2, 3, 3 Plus)
 This project is intended strictly for educational purposes and reverse-engineering research on web APIs and browser extensions. Use at your own risk.
